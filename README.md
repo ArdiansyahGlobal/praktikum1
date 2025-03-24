@@ -1,31 +1,22 @@
-# masterplan
+Soal Praktikum 1
+1.	Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silahkan diperbaiki.
+2.	Jelaskan maksud dari langkah 4 pada praktikum tersebut! Mengapa dilakukan demikian?
+3.	Mengapa perlu variabel plan di langkah 6 pada praktikum tersebut? Mengapa dibuat konstanta ?
+4.	Lakukan capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+5.	Apa kegunaan method pada Langkah 11 dan 13 dalam lifecyle state ? Kumpulkan laporan praktikum Anda berupa document doc
+Jawaban Praktikum 1
+1.	Program telah berjalan sebagaimana mestinya
+2.	Dengan mengelompokkan beberapa model ke dalam satu file, kita dapat mengimpor semua model tersebut dengan satu baris kode. Ini mengurangi jumlah baris kode yang diperlukan untuk impor di setiap file yang membutuhkan model tersebut. Misalnya, alih-alih menulis:
+3.	    import 'package:master_plan/models/plan.dart';
+    import 'package:master_plan/models/task.dart';
+Kita cukup menulis:
+    import 'package:master_plan/models/data_layer.dart';
+membuat kode lebih bersih dan lebih mudah dibaca, terutama saat aplikasi berkembang dan jumlah model bertambah.
+4.	Variabel plan di langkah 6 praktikum ini sangat penting karena berfungsi sebagai representasi dari rencana yang dikelola dalam aplikasi. Variabel ini menyimpan informasi tentang nama rencana dan daftar tugas, sehingga memudahkan pelacakan dan pengelolaan data. Dengan adanya plan, saya bisa mengakses dan memperbarui informasi dengan lebih efisien, serta memastikan tampilan aplikasi selalu mencerminkan data terbaru melalui pemanggilan setState().
+Selain itu, mengapa harus dibuat sebagai konstanta? agar nilai awalnya tidak akan berubah setelah diinisialisasi. Ini memberikan keamanan data dan menjaga konsistensi struktur rencana meskipun ada perubahan pada daftar tugas. Dengan menjadikannya sebagai konstanta, kode menjadi lebih mudah dibaca dan dipahami. Secara keseluruhan, variabel plan sangat penting untuk pengelolaan data dalam aplikasi, dan menjadikannya sebagai konstanta adalah praktik yang baik dalam pengembangan perangkat lunak.
+5.	Setelah menambahkan widget _buildTaskTile, aplikasi akan menampilkan daftar tugas dengan checkbox dan field untuk mengedit deskripsi. Pengguna dapat mencentang atau menghapus centang pada checkbox untuk menandai tugas sebagai selesai atau belum selesai, serta dapat mengedit deskripsi tugas sesuai kebutuhan. 
+![praktikum1](https://github.com/user-attachments/assets/ecfc17f1-d8c1-40c6-8ced-a019a794f2d3)
+6.	Langkah 11 : Pada langkah ini, menambahkan method initState() setelah deklarasi variabel scrollController. Method ini dipanggil ketika objek state dari widget diinisialisasi. Di dalam initState(), menginisialisasi scrollController dan menambahkan listener. Listener ini berfungsi untuk menangani interaksi pengguna dengan scroll. Ketika pengguna menggulir, meminta fokus pada FocusNode baru, yang membantu dalam mengelola keyboard dan interaksi pengguna. Dengan cara ini, memastikan bahwa semua pengaturan yang diperlukan sudah siap sebelum widget ditampilkan.
+Langkah 13 : Di langkah ini, menambahkan method dispose(), yang dipanggil ketika objek state dihapus dari pohon widget. Method ini digunakan untuk membersihkan sumber daya yang tidak lagi diperlukan. Dalam konteks ini, memanggil scrollController.dispose() di dalam dispose(). Ini penting untuk membebaskan sumber daya yang digunakan oleh ScrollController dan mencegah kebocoran memori. Dengan membersihkan sumber daya yang tidak lagi diperlukan, membantu menjaga performa aplikasi dan memastikan bahwa aplikasi berjalan dengan efisien.
+7.	Done
 
-Jawaban praktikum 1 
-2. Langkah ini bertujuan untuk menyederhanakan impor file model dalam proyek Flutter. 
-Dengan membuat data_layer.dart, kita hanya perlu mengimpor satu file daripada mengimpor setiap model 
-secara terpisah. Ini membuat kode lebih rapi, mudah dikelola, dan lebih scalable seiring bertambahnya 
-model dalam aplikasi.
-3. Variabel plan digunakan untuk menyimpan dan mengelola data rencana (Plan) dalam state agar tampilan 
-dapat diperbarui saat ada perubahan. Deklarasi const Plan() digunakan untuk optimasi performa dan menjaga 
-konsistensi data sebelum ada modifikasi.
-4. Hasil screenshot master plan
-![Screenshoot master plan] (images/Hasil ss praktikum 1.png)
-5. Kegunaan Method dalam Lifecycle State
-initState() (Langkah 11) → Dipanggil saat widget pertama kali dibuat. Method ini menginisialisasi 
-scrollController dan menambahkan listener untuk menyembunyikan keyboard saat pengguna menggulir.
-dispose() (Langkah 13) → Dipanggil saat widget dihapus dari tree. Method ini digunakan untuk 
-membersihkan resource dengan memanggil scrollController.dispose() agar tidak terjadi kebocoran memori.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-//
